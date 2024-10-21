@@ -1,21 +1,16 @@
-﻿namespace LeetCode.Top_Interview_150
+﻿namespace LeetCode.TopInterview150
 {
-    public static class _26RemoveDuplicatesFromSortedArray
+    public static class _80RemoveDuplicatesFromSortedArrayII
     {
         public static int Exercise()
         {
             //Inputs
-            int[] nums = [1, 2];
+            int[] nums = [1, 1, 1];
 
             //Solution
-            if (nums.Length == 1)
-            {
-                return 1;
-            }
-
             int maxPlusOne = nums.Max() + 1;
 
-            for (var i = 0; i < nums.Length - 1; i++)
+            for (var i = 0; i < nums.Length; i++)
             {
                 int repeats = 0;
 
@@ -24,8 +19,7 @@
                     if (nums[i] == nums[j])
                     {
                         repeats++;
-                        
-                        if (repeats != 1)
+                        if (repeats > 2)
                         {
                             nums[j] = maxPlusOne;
                         }
@@ -47,7 +41,7 @@
                 }
             }
 
-            int k = Array.IndexOf(nums, maxPlusOne) - 1;
+            int k = Array.IndexOf(nums, maxPlusOne);
 
             Console.WriteLine(string.Join(",", nums));
             Console.WriteLine(k);

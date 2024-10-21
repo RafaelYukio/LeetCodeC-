@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Top_Interview_150
+﻿namespace LeetCode.TopInterview150
 {
     public static class _27RemoveElement
     {
