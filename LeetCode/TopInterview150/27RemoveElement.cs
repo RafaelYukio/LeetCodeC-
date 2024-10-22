@@ -2,18 +2,18 @@
 {
     public static class _27RemoveElement
     {
-        public static int Exercise()
+        public static Tuple<int, int[]> Exercise(int[] nums, int val)
         {
             //Inputs
-            int[] nums = [0, 1, 2, 2, 3, 0, 4, 2];
-            int val = 2;
+            //int[] nums = [0, 1, 2, 2, 3, 0, 4, 2];
+            //int val = 2;
 
             //Solution
             int k = nums.Length;
 
             if (k == 0)
             {
-                return k;
+                return new Tuple<int, int[]>(k, nums);
             }
 
             int maxPluxOne = nums.Max() + 1;
@@ -41,7 +41,7 @@
                 }
             }
 
-            return k;
+            return new Tuple<int, int[]>(k, nums);
         }
     }
 }
